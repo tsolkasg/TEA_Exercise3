@@ -209,6 +209,8 @@ def word2features(sent, i):
         'word[:3]': initial_word[:3],
         'word[:2]': initial_word[:2],
     }
+
+    # If not the first word, add features regarding previous word
     if i > 0:
         previous_word = sent[i - 1][0]
         previous_initial_word = sent[i - 1][2]
@@ -228,6 +230,7 @@ def word2features(sent, i):
     else:
         features['BOS'] = True
 
+    # If not the last word, add features regarding next word
     if i < len(sent) - 1:
         next_word = sent[i + 1][0]
         next_initial_word = sent[i + 1][2]
