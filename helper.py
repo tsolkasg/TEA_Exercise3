@@ -99,7 +99,7 @@ def read_train_data(path, words_count):
             word2pos[initial_word][postag] += 1
             pos2word[postag][word] += 1
             postag_set.add(postag)
-            word_info = (word, postag, initial_word)  # EDW
+            word_info = (word, postag, initial_word)
             list_of_sentence_words.append(word_info)
             list_of_sentence_postags.append(postag)
 
@@ -378,7 +378,7 @@ def CRFplotTrainTestLines(title, clf, X_train, y_train, X_test, y_test, postags,
     results['on_train'] = {}
 
     for i in range(1, 11):
-        # print("iteration : %d" % i)
+        print("iteration : %d" % i)
         if (i == 10):
             train_x_part = train_x_s_s
             train_y_part = train_y_s_s
